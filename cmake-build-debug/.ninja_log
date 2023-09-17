@@ -1,0 +1,4 @@
+# ninja log v5
+0	337	1694949884378527799	CMakeFiles/cpp_linked_list.dir/main.cpp.o	1cce0e227b82322b
+0	480	1694949884522531148	CMakeFiles/cpp_linked_list.dir/list.cpp.o	8715807b9f9bdfa3
+480	514	1694949884554531892	cpp_linked_list	267b6bc2f0ad033d
