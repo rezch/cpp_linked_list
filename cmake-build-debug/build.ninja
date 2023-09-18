@@ -55,8 +55,8 @@ build CMakeFiles/cpp_linked_list.dir/main.cpp.o: CXX_COMPILER__cpp_linked_list_u
   OBJECT_DIR = CMakeFiles/cpp_linked_list.dir
   OBJECT_FILE_DIR = CMakeFiles/cpp_linked_list.dir
 
-build CMakeFiles/cpp_linked_list.dir/list.cpp.o: CXX_COMPILER__cpp_linked_list_unscanned_Debug /home/rezch/projects/cpp_linked_list/list.cpp || cmake_object_order_depends_target_cpp_linked_list
-  DEP_FILE = CMakeFiles/cpp_linked_list.dir/list.cpp.o.d
+build CMakeFiles/cpp_linked_list.dir/list_source.cpp.o: CXX_COMPILER__cpp_linked_list_unscanned_Debug /home/rezch/projects/cpp_linked_list/list_source.cpp || cmake_object_order_depends_target_cpp_linked_list
+  DEP_FILE = CMakeFiles/cpp_linked_list.dir/list_source.cpp.o.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/cpp_linked_list.dir
   OBJECT_FILE_DIR = CMakeFiles/cpp_linked_list.dir
@@ -69,7 +69,7 @@ build CMakeFiles/cpp_linked_list.dir/list.cpp.o: CXX_COMPILER__cpp_linked_list_u
 #############################################
 # Link the executable cpp_linked_list
 
-build cpp_linked_list: CXX_EXECUTABLE_LINKER__cpp_linked_list_Debug CMakeFiles/cpp_linked_list.dir/main.cpp.o CMakeFiles/cpp_linked_list.dir/list.cpp.o
+build cpp_linked_list: CXX_EXECUTABLE_LINKER__cpp_linked_list_Debug CMakeFiles/cpp_linked_list.dir/main.cpp.o CMakeFiles/cpp_linked_list.dir/list_source.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/cpp_linked_list.dir
   POST_BUILD = :

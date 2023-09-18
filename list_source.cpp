@@ -1,36 +1,13 @@
-#include "list.h"
+#include "list_source.h"
 #include <algorithm>
+#include <cassert>
 
 
-list::list() : next(nullptr) {}
+template <typename T>
+T &list<T>::operator[](int index)  {
+    assert(index >= 0);
+    assert(index < this->size_);
 
-list::list(int value) : value(value), next(nullptr), size_(1) {}
-
-list::list(int * array, int size) {
-    this->value = *array;
-    this->size_ = size;
-
-    if (size == 1) {
-        this->next = nullptr;
-    }
-    else {
-        this->next = new list(array + 1, size - 1);
-    }
-}
-
-list::list(list *lst) {
-    this->value = lst->value;
-    this->size_ = lst->size_;
-
-    if (lst->next == nullptr) {
-        this->next = nullptr;
-    }
-    else {
-        this->next = new list(lst->next);
-    }
-}
-
-int &list::operator[](int index) {
     if (index == 0 || this->next == nullptr) {
         return this->value;
     }
@@ -38,7 +15,8 @@ int &list::operator[](int index) {
     return (*this->next)[index - 1];
 }
 
-void list::append(int val) {
+template <typename T>
+void list<T>::append(T val) {
     ++this->size_;
 
     if (this->next == nullptr) {
@@ -49,7 +27,8 @@ void list::append(int val) {
     }
 }
 
-void list::extend(int * array, int size) {
+template <typename T>
+void list<T>::extend(T * array, int size) {
     this->size_ += size;
 
     if (this->next == nullptr) {
@@ -60,7 +39,8 @@ void list::extend(int * array, int size) {
     }
 }
 
-void list::insert(int index, int val) {
+template <typename T>
+void list<T>::insert(int index, T val) {
     if (index == 0) {
         this->value = val;
         ++this->size_;
@@ -75,7 +55,8 @@ void list::insert(int index, int val) {
     }
 }
 
-void list::remove(int val) {
+template <typename T>
+void list<T>::remove(T val) {
     if (this->next == nullptr) {
         return;
     }
@@ -91,7 +72,8 @@ void list::remove(int val) {
     }
 }
 
-void list::pop_back() {
+template <typename T>
+void list<T>::pop_back() {
     if ((*this->next).next == nullptr) {
         delete this->next;
         this->next = nullptr;
@@ -102,7 +84,8 @@ void list::pop_back() {
     }
 }
 
-void list::pop(int index) {
+template <typename T>
+void list<T>::pop(int index) {
     if (this->next == nullptr) {
         return;
     }
@@ -118,26 +101,31 @@ void list::pop(int index) {
     }
 }
 
-void list::clear() {
-    this->next->clear_();
+template <typename T>
+void list<T>::clear() {
+    if (this->next != nullptr) {
+        this->next->clear_();
+    }
 
     this->next = nullptr;
     this->size_ = 0;
-    this->value = (int)NULL;
 }
 
-void list::clear_() const {
+template <typename T>
+void list<T>::clear_() const {
     if (this->next != nullptr) {
         this->next->clear_();
     }
     delete this;
 }
 
-int list::index(int val) {
+template <typename T>
+int list<T>::index(T val) {
     return this->index_(val, 0);
 }
 
-int list::count_(int val, int count) const {
+template <typename T>
+int list<T>::count_(T val, int count) const {
     if (this->value == val) {
         ++count;
     }
@@ -149,13 +137,15 @@ int list::count_(int val, int count) const {
     return (*this->next).count_(val, count);
 }
 
-int list::count(int val) {
+template <typename T>
+int list<T>::count(T val) {
     return this->count_(val, 0);
 }
 
-void list::sort(bool (comparator)(int a, int b)) {
-    int * array = this->to_array();
-    int array_size = this->size_;
+template <typename T>
+void list<T>::sort(bool (comparator)(T a, T b)) {
+    T * array = this->to_array();
+    T array_size = this->size_;
 
 
     std::sort(array, array + array_size, comparator);
@@ -166,7 +156,8 @@ void list::sort(bool (comparator)(int a, int b)) {
     this->next = new list(array + 1, array_size - 1);
 }
 
-list list::reverse_(list * new_next, int new_size) {
+template <typename T>
+list<T> list<T>::reverse_(list * new_next, int new_size) {
     list * temp = this->next;
     this->size_ = new_size;
     this->next = new_next;
@@ -178,7 +169,8 @@ list list::reverse_(list * new_next, int new_size) {
     return temp->reverse_(this, new_size + 1);
 }
 
-list list::reverse() {
+template <typename T>
+list<T> list<T>::reverse() {
     list new_list = this->copy()->reverse_(nullptr, 1);
 
     this->clear();
@@ -186,11 +178,13 @@ list list::reverse() {
     return new_list;
 }
 
-list * list::copy() {
+template <typename T>
+list<T> * list<T>::copy() {
     return new list(this);
 }
 
-int list::index_(int val, int index) const {
+template <typename T>
+int list<T>::index_(T val, int index) const {
     if (this->next == nullptr) {
         return -1;
     }
@@ -202,12 +196,14 @@ int list::index_(int val, int index) const {
     return (*this->next).index_(val, index + 1);
 }
 
-int list::size() const {
+template <typename T>
+int list<T>::size() const {
     return this->size_;
 }
 
-int *list::to_array() {
-    int * array = new int[this->size_];
+template <typename T>
+T *list<T>::to_array() {
+    T * array = new T[this->size_];
     list * ptr = this;
 
     for (int i = 0; i < this->size_ && ptr != nullptr; ++i, ptr = ptr->next) {
