@@ -1,6 +1,5 @@
 #include "list_source.h"
-#include <algorithm>
-#include <cassert>
+
 
 
 template <typename T>

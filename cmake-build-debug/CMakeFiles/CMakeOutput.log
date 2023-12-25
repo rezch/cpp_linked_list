@@ -1,0 +1,59 @@
+The system is: Windows - 10.0.19045 - AMD64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: C:/Program Files/JetBrains/CLion 2022.2.4/bin/mingw/bin/gcc.exe 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
+
+The C compiler identification is GNU, found in "C:/Users/Daniil/source/cpp_linked_list/cmake-build-debug/CMakeFiles/3.23.2/CompilerIdC/a.exe"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: C:/Program Files/JetBrains/CLion 2022.2.4/bin/mingw/bin/g++.exe 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+
+The CXX compiler identification is GNU, found in "C:/Users/Daniil/source/cpp_linked_list/cmake-build-debug/CMakeFiles/3.23.2/CompilerIdCXX/a.exe"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: C:/Users/Daniil/source/cpp_linked_list/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f Makefile cmTC_cc33c/fast && C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe  -f CMakeFiles\cmTC_cc33c.dir\build.make CMakeFiles/cmTC_cc33c.dir/build
+mingw32-make[1]: Entering directory 'C:/Users/Daniil/source/cpp_linked_list/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cc33c.dir/testCCompiler.c.obj
+C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe    -o CMakeFiles\cmTC_cc33c.dir\testCCompiler.c.obj -c C:\Users\Daniil\source\cpp_linked_list\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c
+Linking C executable cmTC_cc33c.exe
+"C:\Program Files\JetBrains\CLion 2022.2.4\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_cc33c.dir\link.txt --verbose=1
+"C:\Program Files\JetBrains\CLion 2022.2.4\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\cmTC_cc33c.dir/objects.a
+C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\ar.exe qc CMakeFiles\cmTC_cc33c.dir/objects.a @CMakeFiles\cmTC_cc33c.dir\objects1.rsp
+C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe -Wl,--whole-archive CMakeFiles\cmTC_cc33c.dir/objects.a -Wl,--no-whole-archive -o cmTC_cc33c.exe -Wl,--out-implib,libcmTC_cc33c.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_cc33c.dir\linklibs.rsp
+mingw32-make[1]: Leaving directory 'C:/Users/Daniil/source/cpp_linked_list/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: C:/Users/Daniil/source/cpp_linked_list/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f Makefile cmTC_48fae/fast && C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe  -f CMakeFiles\cmTC_48fae.dir\build.make CMakeFiles/cmTC_48fae.dir/build
+mingw32-make[1]: Entering directory 'C:/Users/Daniil/source/cpp_linked_list/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_48fae.dir/testCXXCompiler.cxx.obj
+C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE    -o CMakeFiles\cmTC_48fae.dir\testCXXCompiler.cxx.obj -c C:\Users\Daniil\source\cpp_linked_list\cmake-build-debug\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+Linking CXX executable cmTC_48fae.exe
+"C:\Program Files\JetBrains\CLion 2022.2.4\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_48fae.dir\link.txt --verbose=1
+"C:\Program Files\JetBrains\CLion 2022.2.4\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\cmTC_48fae.dir/objects.a
+C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\ar.exe qc CMakeFiles\cmTC_48fae.dir/objects.a @CMakeFiles\cmTC_48fae.dir\objects1.rsp
+C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE -Wl,--whole-archive CMakeFiles\cmTC_48fae.dir/objects.a -Wl,--no-whole-archive -o cmTC_48fae.exe -Wl,--out-implib,libcmTC_48fae.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_48fae.dir\linklibs.rsp
+mingw32-make[1]: Leaving directory 'C:/Users/Daniil/source/cpp_linked_list/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+

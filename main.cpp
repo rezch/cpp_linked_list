@@ -1,24 +1,19 @@
 #include <iostream>
-#include "list.h"
 #include <string>
 #include <stack>
+
+#include "list.h"
 
 
 int main() {
 
-    list l = list<std::string>("hello");
+    int v[] = {1, 2, 3};
 
-    l.append("world");
+    list l = list<int>(v, sizeof(v) / sizeof(int));
+    l.append(4);
 
-    for (int i = 0; i < l.size(); i++) {
-        std::cout << l[i] << std::endl;
-    }
 
-    std::stack<int> st;
-    st.push(14);
-    st.push(124);
-    list l2 = list<std::stack<int>>(st);
-    std::cout << l2[0].top() << std::endl;
+    std::cout << l.size() << std::endl;
 
     return 0;
 }
